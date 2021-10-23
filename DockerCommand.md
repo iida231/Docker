@@ -12,6 +12,8 @@
     - [1.2.1. wordpressとmysqlのコンテナを接続する](#121-wordpressとmysqlのコンテナを接続する)
     - [dockerのファイルコピー](#dockerのファイルコピー)
     - [dockerのマウント](#dockerのマウント)
+    - [dockerimage作成](#dockerimage作成)
+    - [dockerをコマンドで操作する](#dockerをコマンドで操作する)
 
 <!-- /TOC -->
 
@@ -131,4 +133,20 @@ docker cp "C:\Users\yuich\OneDrive\デスクトップ\index.html" apa000ex19:/us
   
   ```
   docker run --name apa000ex20 -d -p 8090:80 -v "C:\Users\yuich\OneDrive\デスクトップ\apa_folder":/usr/local/apache2/htdocs httpd
+  ```
+
+  ### dockerimage作成
+
+  ```
+  docker commit コンテナ名 image名
+
+  docker commit apa000ex22 ex22_original1
+  ```
+
+  ### dockerをコマンドで操作する
+
+  ```
+  docker exec コンテナ名 /bin/bash
+
+  docker run (オプション) イメージ名 /bin/bash
   ```
